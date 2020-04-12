@@ -43,5 +43,5 @@ run_analysis <- function (){
   melted <- melt(df, id.vars=(c("activity", "subject")))
   df2 <- dcast(melted, activity + subject ~ variable, mean)
   
-  df2
+  write.table(df2, "output.txt", row.names=F, quote=F)
 }
